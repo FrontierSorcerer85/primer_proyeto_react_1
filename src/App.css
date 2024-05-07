@@ -18,7 +18,7 @@
   padding: 20px 30px;
   border-radius: 10px;
   margin: 15px;
-  background-color: greenyellow;
+  background-color: skyblue;
 }
 .Titulo {
   font-size: 18px;
@@ -42,7 +42,7 @@
   font-weight: bold;
   margin:10px;
   text-align: center;
-  background-color: coral;
+  background-color: gold;
   border-radius: 10px;
   cursor: pointer;
 }
