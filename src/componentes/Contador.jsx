@@ -5,7 +5,7 @@ import Boton from './Boton';
 export default class  Contador extends Component {
   constructor(props){
     super(props);
-    this.state = {valor: 2}
+    this.state = {valor: 1}
   }
   restar () {
     this.setState({valor: this.state.valor - 1 })
@@ -38,6 +38,9 @@ export default class  Contador extends Component {
           <Boton simbolo='/2'
           accion={()=> this.dividir()}
           />
+          <Boton simbolo='x'
+          accion={()=> this.props.eliminar()}
+            />
         </div>
       </div>
     )
