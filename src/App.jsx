@@ -38,3 +38,8 @@ export default class App extends Component {
     )
   }
 }
+
+//map
+//<contador valor>
+//
+//</contador>
