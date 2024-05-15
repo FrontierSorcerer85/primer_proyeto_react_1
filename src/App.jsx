@@ -13,26 +13,29 @@ export default class App extends Component {
     }
   }
   guardar(nombre) {
-    let nuevosContadores =this.state.contadores;
-    nuevosContadores.push(nombre);
+    let nuevosContadores =[...this.state.contadores, nombre];
     this.setState({contadores: nuevosContadores});
   }
 
-  eliminar(Contadores) {
-    this.state.contadores.splice (1, 0);
+  eliminarContador(index) {
+    const nuevosContadores = this.state.contadores.slice();
+    nuevosContadores.splice(index, 1);
+    this.setState({ contadores: nuevosContadores });
   }
-  render () {
+  
+  render() {
     return (
-      <div className='Contenedor'>
-        <Formulario 
-          guardar={(nombre) => this.guardar(nombre)}
-        />
-      <div className='ListaContadores'>
-        {this.state.contadores.map((cont, index) => 
-        <Contador key={index}
-        eliminar={()=>{}}
-        >{cont}</Contador>)}
-        
+        <div className="Contenedor">
+            <Formulario 
+                guardar={(nombre) => this.guardar(nombre)}
+                eliminarTodos={() => this.eliminarTodos()}
+            />
+            <div className="ListaContadores">
+                {this.state.contadores.map((cont, index) => (
+                    <Contador key={index} eliminar={() => this.eliminarContador(index)}>
+                        {cont}
+                    </Contador>
+                ))}
       </div>
       </div>
     )
